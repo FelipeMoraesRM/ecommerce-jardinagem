@@ -1,80 +1,68 @@
-# 🌿 E-commerce de Jardinagem – Modelagem de Banco de Dados
+# 🌿 E-commerce de Jardinagem – Avaliação do Módulo 3
 
-Este projeto foi desenvolvido como parte de uma atividade prática do módulo de **modelagem e manipulação de bancos de dados com controle de versão**. A proposta foi criar a estrutura de dados de um pequeno comércio — neste caso, um **e-commerce especializado em jardinagem**.
+Este repositório contém o desenvolvimento da atividade prática do **Módulo 3** da disciplina **Projeto Integrador II**, com foco em **modelagem e manipulação de banco de dados** e **uso de controle de versão com Git**. A aplicação simula um sistema para um e-commerce de jardinagem, incluindo a definição do esquema relacional, operações em SQL e versionamento do código-fonte.
 
-## 📌 Objetivo
+## 📌 Objetivos
 
-O objetivo principal é demonstrar o domínio dos seguintes tópicos:
-
-- Modelagem de banco de dados relacional com duas tabelas
-- Definição adequada de atributos e tipos de dados
-- Uso de comandos SQL para criação e inserção de registros
-- Versionamento do projeto utilizando Git e GitHub
+- Modelar e implementar um banco de dados relacional para gerenciar produtos e vendas.
+- Realizar operações de inserção, atualização, remoção e consulta utilizando SQL.
+- Versionar a evolução do projeto utilizando Git e GitHub.
 
 ---
 
-## 🗂️ Estrutura do Banco de Dados
+## 🗂 Estrutura do Projeto
 
-O banco de dados é composto por **duas tabelas relacionais**:
+- `ecommerce_jardinagem.sql`: script SQL com toda a estrutura do banco (tabelas, inserções, atualizações, exclusões e consultas).
+- `versão anterior - checkout/`: pasta com o conteúdo original do módulo anterior (para fins de histórico e comparação).
+
+---
+
+## 🧾 Banco de Dados
+
+O banco de dados foi modelado com duas tabelas:
 
 ### 📦 `mercadorias`
-Armazena os produtos vendidos pela loja.
+Armazena os produtos disponíveis no sistema.
 
-| Campo             | Tipo        | Descrição                                 |
-|------------------|-------------|-------------------------------------------|
-| `cod_mercadoria` | INT (PK)    | Código único do item                      |
-| `produto`        | VARCHAR(100)| Nome do produto                           |
-| `valor_unitario` | DECIMAL(8,2)| Preço por unidade                         |
-| `qtd_estoque`    | INT         | Quantidade disponível                     |
-| `categoria_item` | VARCHAR(50) | Categoria (sementes, ferramentas, vasos…) |
+| Campo            | Tipo           | Descrição                   |
+|------------------|----------------|-----------------------------|
+| `cod_mercadoria` | INT (PK)       | Código do produto           |
+| `produto`        | VARCHAR(100)   | Nome do item                |
+| `valor_unitario` | DECIMAL(8,2)   | Preço por unidade           |
+| `qtd_estoque`    | INT            | Quantidade em estoque       |
+| `categoria_item` | VARCHAR(50)    | Categoria (sementes, etc.)  |
 
 ### 🧾 `vendas`
-Registra os pedidos realizados pelos clientes.
+Registra os pedidos feitos pelos clientes.
 
-| Campo             | Tipo         | Descrição                                           |
-|------------------|--------------|-----------------------------------------------------|
-| `cod_pedido`     | INT (PK)     | Código do pedido                                    |
-| `data_venda`     | DATE         | Data em que a venda foi realizada                   |
-| `nome_cliente`   | VARCHAR(100) | Nome do comprador                                   |
-| `cod_mercadoria` | INT (FK)     | Produto comprado, relacionado à tabela `mercadorias`|
-| `qtd_comprada`   | INT          | Quantidade adquirida                                |
-
----
-
-## 🧾 Script SQL
-
-O arquivo `ecommerce_jardinagem.sql` contém:
-
-- Criação das tabelas `mercadorias` e `vendas`
-- Inserção de três registros em cada tabela
-- Chaves primárias e estrangeiras
-- Validação de dados com `CHECK`
+| Campo           | Tipo           | Descrição                           |
+|------------------|----------------|-------------------------------------|
+| `cod_pedido`     | INT (PK)       | Código do pedido                    |
+| `data_venda`     | DATE           | Data da compra                      |
+| `nome_cliente`   | VARCHAR(100)   | Nome do comprador                   |
+| `cod_mercadoria` | INT (FK)       | Produto comprado                    |
+| `qtd_comprada`   | INT            | Quantidade adquirida                |
 
 ---
 
 ## 🔁 Versionamento com Git
 
-O projeto foi versionado com Git e enviado para o GitHub com:
-
-- Inicialização do repositório com `git init`
-- Commit com mensagem descritiva
-- Push para repositório remoto público
-
-### ✅ Commit usado:
-```
-Modelagem do banco de dados: criação das tabelas mercadorias e vendas
-```
+As alterações no projeto foram controladas com Git. O repositório foi inicializado localmente, com commits frequentes e mensagens descritivas. O histórico pode ser acompanhado neste repositório público.
 
 ---
 
-## 🔗 Repositório
+## 📎 Link para o Repositório
 
-Acesse o repositório completo com o código SQL neste link:
-
-👉 https://github.com/FelipeMoraesRM/ecommerce-jardinagem
+> https://github.com/FelipeMoraesRM/ecommerce-jardinagem
 
 ---
 
-## 👨‍🎓 Atividade acadêmica
+## 👨‍🎓 Informações Acadêmicas
 
-Este projeto foi entregue como requisito da atividade avaliativa do módulo de bancos de dados e controle de versão, e está em conformidade com as instruções propostas.
+**Disciplina:** Projeto Integrador II  
+**Módulo:** 3 – Banco de Dados e Controle de Versão  
+**Curso:** Tecnologia da Informação  
+**Instituição:** Universidade Federal de Mato Grosso do Sul  
+**Entrega:** Enviada via AVA em PDF com relatório completo e link do repositório.
+
+---
